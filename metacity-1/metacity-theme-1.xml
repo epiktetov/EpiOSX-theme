@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<metacity_theme>
+<info>
+  <name>EpiOSX</name>
+  <author>Mikael Hedberg, Markus Hammer and Mikael Epiktetov</author>
+  <copyright>&#194; Mikael Hedberg, &#194; EpiMG, 2008</copyright>
+  <date>January 20, 2008</date>
+  <description>OSX look base on Iridium and H2Oridium</description>
+</info>
+<constant name="IconTitleSpacing" value="8"/>
+
+<frame_geometry name="normal" rounded_top_left="true"
+                              rounded_top_right="true" title_scale="medium">
+  <distance name="left_width" value="4"/>
+  <distance name="right_width" value="4"/>
+  <distance name="bottom_height" value="4"/>
+  <distance name="left_titlebar_edge" value="4"/>
+  <distance name="right_titlebar_edge" value="4"/>
+  <distance name="button_width"  value="15"/>
+  <distance name="button_height" value="15"/>
+  <distance name="title_vertical_pad" value="2"/>
+  <border name="title_border"  left="0" right="0" top="0" bottom="0"/>
+  <border name="button_border" left="0" right="0" top="0" bottom="0"/>
+</frame_geometry>
+<frame_geometry name="border" parent="normal" has_title="false">
+  <distance name="button_width"  value="15"/>
+  <distance name="button_height" value="15"/>
+  <border name="title_border"  left="0" right="0" top="0" bottom="0"/>
+  <border name="button_border" left="0" right="0" top="0" bottom="0"/>
+</frame_geometry>
+
+<draw_ops name="title-text-with-icon">
+  <icon  x="(0 `max` (width-title_width-mini_icon_width-IconTitleSpacing))/2"
+         y="(height-mini_icon_height)/2"
+         width="mini_icon_width" height="mini_icon_height"/>
+  <title color="#eeeeee" x="(0 `max` (width-title_width+mini_icon_width+IconTitleSpacing))/2+1"
+                         y="(0 `max` (height-title_height))/2+1"/>
+  <title color="#000000" x="(0 `max` (width-title_width+mini_icon_width+IconTitleSpacing))/2"
+                         y="(0 `max` (height-title_height))/2"/>
+</draw_ops>
+<draw_ops name="title-text-focused">
+  <title color="#eeeeee" x="(width-title_width)/2+1" y="(height-title_height)/2+1"/>
+  <title color="#000000" x="(width-title_width)/2"   y="(height-title_height)/2"/>
+</draw_ops>
+<draw_ops name="title-text-unfocused">
+  <title color="#cecece" x="(width-title_width)/2+1" y="(height-title_height)/2+1"/>
+  <title color="#666666" x="(width-title_width)/2"   y="(height-title_height)/2"/>
+</draw_ops>
+
+<draw_ops name="blank">
+</draw_ops>
+<draw_ops name="title">
+  <image filename="title-left.png"  x="0" y="0"  width="object_width" height="height"/>
+  <image filename="title-bar.png"   x="4" y="0"  width="width-4"      height="height"/>
+  <image filename="title-right.png" x="width-object_width" y="0" width="object_width" height="height"/>
+</draw_ops>
+<draw_ops name="frame-left-focused">
+  <image filename="left-edge.png" x="0" y="0" width="width" height="height"/>
+</draw_ops>
+<draw_ops name="frame-right-focused">
+  <image filename="right-edge.png" x="0" y="0" width="width" height="height"/>
+</draw_ops>
+<draw_ops name="frame-bottom-focused">
+  <image filename="bottom-left.png"  x="0" y="0"  width="object_width" height="height"/>
+  <image filename="bottom.png"       x="4" y="0"  width="width-4"      height="height"/>
+  <image filename="bottom-right.png" x="width-object_width" y="0" width="object_width" height="height"/>
+</draw_ops>
+
+<draw_ops name="button-inactive">
+  <image filename="button-inactive.png" x="0" y="0" width="width" height="height"/>
+</draw_ops>
+<draw_ops name="button-close-active">
+  <image filename="close-active.png" x="0" y="0" width="width" height="height"/>
+</draw_ops>
+<draw_ops name="button-close-hover">
+  <image filename="close-hover.png" x="0" y="0" width="width" height="height"/>
+</draw_ops>
+<draw_ops name="button-maximize-active">
+  <image filename="maximize-active.png" x="0" y="0" width="width" height="height"/>
+</draw_ops>
+<draw_ops name="button-maximize-hover">
+  <image filename="maximize-hover.png" x="0" y="0" width="width" height="height"/>
+</draw_ops>
+<draw_ops name="button-minimize-active">
+  <image filename="minimize-active.png" x="0" y="0" width="width" height="height"/>
+</draw_ops>
+<draw_ops name="button-minimize-hover">
+  <image filename="minimize-hover.png" x="0" y="0" width="width" height="height"/>
+</draw_ops>
+<draw_ops name="button-menu-active">
+  <image filename="menu-active.png" x="0" y="0" width="width" height="height"/>
+</draw_ops>
+<draw_ops name="button-menu-hover">
+  <image filename="menu-hover.png" x="0" y="0" width="width" height="height"/>
+</draw_ops>
+
+<frame_style name="normal-focused" geometry="normal">
+  <piece position="titlebar" draw_ops="title"/>
+  <piece position="title"    draw_ops="title-text-focused"/>
+  <piece position="left_edge"   draw_ops="frame-left-focused"/>
+  <piece position="right_edge"  draw_ops="frame-right-focused"/>
+  <piece position="bottom_edge" draw_ops="frame-bottom-focused"/>
+
+  <button function="close" state="normal"   draw_ops="button-close-active"/>
+  <button function="close" state="prelight" draw_ops="button-close-hover"/>
+  <button function="close" state="pressed"  draw_ops="button-close-active"/>
+
+  <button function="maximize" state="normal"   draw_ops="button-maximize-active"/>
+  <button function="maximize" state="prelight" draw_ops="button-maximize-hover"/>
+  <button function="maximize" state="pressed"  draw_ops="button-maximize-active"/>
+
+  <button function="minimize" state="normal"   draw_ops="button-minimize-active"/>
+  <button function="minimize" state="prelight" draw_ops="button-minimize-hover"/>
+  <button function="minimize" state="pressed"  draw_ops="button-minimize-active"/>
+
+  <button function="menu" state="normal"   draw_ops="button-menu-active"/>
+  <button function="menu" state="prelight" draw_ops="button-menu-hover"/>
+  <button function="menu" state="pressed"  draw_ops="button-menu-active"/>
+</frame_style>
+
+<frame_style name="normal-unfocused" geometry="normal">
+  <piece position="titlebar" draw_ops="title"/>
+  <piece position="title"    draw_ops="title-text-unfocused"/>
+  <piece position="left_edge"   draw_ops="frame-left-focused"/>
+  <piece position="right_edge"  draw_ops="frame-right-focused"/>
+  <piece position="bottom_edge" draw_ops="frame-bottom-focused"/>
+
+  <button function="close" state="normal"   draw_ops="button-inactive"/>
+  <button function="close" state="prelight" draw_ops="button-close-hover"/>
+  <button function="close" state="pressed"  draw_ops="button-close-active"/>
+
+  <button function="maximize" state="normal"   draw_ops="button-inactive"/>
+  <button function="maximize" state="prelight" draw_ops="button-maximize-hover"/>
+  <button function="maximize" state="pressed"  draw_ops="button-maximize-active"/>
+
+  <button function="minimize" state="normal"   draw_ops="button-inactive"/>
+  <button function="minimize" state="prelight" draw_ops="button-minimize-hover"/>
+  <button function="minimize" state="pressed"  draw_ops="button-minimize-active"/>
+
+  <button function="menu" state="normal"   draw_ops="button-inactive"/>
+  <button function="menu" state="prelight" draw_ops="button-menu-hover"/>
+  <button function="menu" state="pressed"  draw_ops="button-menu-active"/>
+</frame_style>
+
+<frame_style name="normal-shaded-focused" geometry="normal" parent="normal-focused">
+  <piece position="titlebar" draw_ops="title"/>
+</frame_style>
+<frame_style name="normal-shaded-unfocused" geometry="normal" parent="normal-unfocused">
+  <piece position="titlebar" draw_ops="title"/>
+</frame_style>
+
+<frame_style_set name="normal">
+  <frame focus="yes" state="normal" resize="both" style="normal-focused"/>
+  <frame focus="yes" state="maximized"            style="normal-focused"/>
+  <frame focus="yes" state="shaded"               style="normal-shaded-focused"/>
+  <frame focus="yes" state="maximized_and_shaded" style="normal-shaded-focused"/>
+
+  <frame focus="no" state="normal" resize="both" style="normal-unfocused"/>
+  <frame focus="no" state="maximized"            style="normal-unfocused"/>
+  <frame focus="no" state="shaded"               style="normal-shaded-unfocused"/>
+  <frame focus="no" state="maximized_and_shaded" style="normal-shaded-unfocused"/>
+</frame_style_set>
+
+<window type="normal"       style_set="normal"/>
+<window type="border"       style_set="normal"/>
+<window type="dialog"       style_set="normal"/>
+<window type="modal_dialog" style_set="normal"/>
+<window type="menu"         style_set="normal"/>
+<window type="utility"      style_set="normal"/>
+
+<menu_icon function="close"      state="normal" draw_ops="button-close-active"/>
+<menu_icon function="minimize"   state="normal" draw_ops="button-minimize-active"/>
+<menu_icon function="maximize"   state="normal" draw_ops="button-maximize-active"/>
+<menu_icon function="unmaximize" state="normal" draw_ops="button-maximize-active"/>
+</metacity_theme>

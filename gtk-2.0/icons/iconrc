@@ -1,0 +1,42 @@
+style "icon-style"
+{
+  stock["gnome-stock-about"]      = {{ "gtk-dialog-question.png",   *,*,* }}
+  stock["gnome-stock-connect"]    = {{ "gnome-stock-connect.png",   *,*,* }}
+  stock["gnome-stock-disconnect"] = {{ "gnome-stock-disconnect.png",*,*,* }}
+  stock["gnome-stock-gnome-run"]  = {{ "gnome-stock-gnome-run.png", *,*,* }}
+  stock["panel-run"]              = {{ "gnome-stock-gnome-run.png", *,*,* }}
+  stock["gtk-execute"]            = {{ "gnome-stock-gnome-run.png", *,*,* }}
+
+  stock["gtk-add"]    = {{ "gtk-add.png", *, *, * }}
+  stock["gtk-apply"]  = {{ "gtk-ok.png", *, *, * }}
+  stock["gtk-delete"] = {{ "gtk-delete.png", *, *, * }}
+  stock["gtk-remove"] = {{ "gtk-delete.png", *, *, * }}
+  stock["gtk-ok"]     = {{ "gtk-ok.png", *, *, * }}
+  stock["gtk-close"]  = {{ "gtk-close.png", *, *, * }}
+  stock["gtk-yes"]    = {{ "gtk-ok.png", *, *, * }}
+
+  stock["gtk-dialog-error"]    = {{ "gtk-dialog-error.png", *, *, * }}
+  stock["gtk-dialog-info"]     = {{ "gtk-dialog-info.png", *, *, * }}
+  stock["gtk-dialog-question"] = {{ "gtk-dialog-question.png", *, *, * }}
+  stock["gtk-dialog-warning"]  = {{ "gtk-dialog-warning.png", *, *, * }}
+
+  stock["gtk-cdrom"]    = {{ "gtk-cdrom.png", *, *, * }}
+  stock["gtk-index"]    = {{ "gtk-index.png", *, *, * }}
+  stock["gtk-quit"]     = {{ "gtk-quit.png", *, *, * }}
+  stock["panel-logout"] = {{ "gtk-quit.png", *, *, * }}
+
+  stock["gtk-preferences"]  = {{ "gtk-preferences.png", *, *, * }}
+  stock["gtk-properties"]   = {{ "gtk-dialog-info.png", *, *, * }}
+  stock["gtk-select-color"] = {{ "gtk-select-color.png", *, *, * }}
+  stock["gtk-select-font"]  = {{ "gtk-select-font.png", *, *, * }}
+}
+class "GtkWidget" style "icon-style"
+
+style "panel"
+{
+  stock["panel-lockscreen"] = {{ "panel-lockscreen.png", *, *, * }}
+  stock["panel-searchtool"] = {{ "panel-find.png", *, *, *       }}
+  stock["panel-multimedia"] = {{ "stock_multimedia.png"          }}
+}
+class "GtkWidget" style "panel"
+
